@@ -1,0 +1,16 @@
+{{- if .Values.rollouts.blueGreen.enabled }}
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: {{ include "quarkus.fullname" . }}-analysis-template
+  labels:
+    {{- include "quarkus.labels" . | nindent 4 }}
+spec:
+  metrics:
+  - name: {{ include "quarkus.fullname" . }}-webmetric
+    successCondition: result == 'UP'
+    provider:
+      web:
+        url: "http://{{ .Values.rollouts.blueGreen.previewService }}.{{ .Values.global.namespace }}.svc.cluster.local:8080/q/health/ready"
+        jsonPath: "{$.status}" 
+{{- end }}
