@@ -1,10 +1,8 @@
 tags:
-  discounts-green: false
-  products-green: false
   discountsNetworkingOffline: false
   productsNetworkingOffline: false
 
-discounts-blue:
+discounts:
   mode: online
   quarkus-base:
     fullnameOverride: "discounts"
@@ -20,7 +18,7 @@ discounts-blue:
               duration: 1m
   fullnameOverride: "discounts"
     
-products-blue:
+products:
   mode: online
   quarkus-base:
     image:

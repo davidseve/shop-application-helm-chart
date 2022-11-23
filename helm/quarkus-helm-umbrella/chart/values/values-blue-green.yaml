@@ -1,8 +1,4 @@
-tags:
-  discounts-green: false
-  products-green: false
-
-discounts-blue:
+discounts:
   mode: online
   quarkus-base:
     fullnameOverride: "discounts"
@@ -17,7 +13,7 @@ discounts-blue:
         previewService: "discounts-umbrella-offline"
   fullnameOverride: "discounts"
   
-products-blue:
+products:
   mode: online
   quarkus-base:
     image:

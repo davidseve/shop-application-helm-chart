@@ -1,13 +1,13 @@
-discounts-blue:
+discounts:
   nameOverride: discounts-umbrella
-  fullnameOverride: "discounts-blue"
+  fullnameOverride: "discounts"
   quarkus-base:
     replicaCount: 2
     nameOverride: discounts-umbrella
-    fullnameOverride: "discounts-blue"
+    fullnameOverride: "discounts"
     log:
       level: DEBUG
-    version: blue
+    version: active
     image:
       # Overrides the image tag whose default is the chart appVersion.
       tag: "latest"
@@ -15,21 +15,7 @@ discounts-blue:
       prometheus.io/scrape: "true"
       prometheus.io/port: "8080"
       prometheus.io/path: "/q/metrics"
-discounts-green:
-  nameOverride: discounts-umbrella
-  fullnameOverride: "discounts-green"
-  quarkus-base:
-    nameOverride: discounts-umbrella
-    fullnameOverride: "discounts-green"
-    log:
-      level: DEBUG 
-    version: green
-    image:
-      tag: "latest"
-    podAnnotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "8080"
-      prometheus.io/path: "/q/metrics" 
+
 discountsNetworkingOnline:
   nameOverride: discounts-umbrella
   fullnameOverride: "discounts-umbrella-online"
@@ -41,37 +27,23 @@ discountsNetworkingOffline:
   router:
     enabled: false
     
-products-blue:
+products:
   nameOverride: products-umbrella
-  fullnameOverride: "products-blue"
+  fullnameOverride: "products"
   quarkus-base:
     replicaCount: 2
     nameOverride: products-umbrella
-    fullnameOverride: "products-blue"
+    fullnameOverride: "products"
     log:
       level: DEBUG
-    version: blue
+    version: active
     image:
       tag: "latest"
     podAnnotations:
       prometheus.io/scrape: "true"
       prometheus.io/port: "8080"
       prometheus.io/path: "/q/metrics"
-products-green:
-  nameOverride: products-umbrella
-  fullnameOverride: "products-green"
-  quarkus-base:
-    nameOverride: products-umbrella
-    fullnameOverride: "products-green"
-    log:
-      level: DEBUG
-    version: green
-    image:
-      tag: "latest"
-    podAnnotations:
-      prometheus.io/scrape: "true"
-      prometheus.io/port: "8080"
-      prometheus.io/path: "/q/metrics"
+
 productsNetworkingOnline:
   nameOverride: products-umbrella
   fullnameOverride: products-umbrella-online

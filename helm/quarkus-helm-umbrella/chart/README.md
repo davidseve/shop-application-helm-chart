@@ -10,7 +10,11 @@ This chart will do the following:
 To install the chart with the release name `my-release`:
  
 ```bash
-$ helm upgrade --install my-release . --values values/values.yaml
+$ helm upgrade --install my-release . --values values/values-canary.yaml
+```
+
+```bash
+$ helm upgrade --install my-release . --values values/values-blue-green.yaml
 ```
  
  
