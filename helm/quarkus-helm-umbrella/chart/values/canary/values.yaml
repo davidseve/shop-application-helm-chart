@@ -21,21 +21,11 @@ discounts:
 products:
   mode: online
   quarkus-base:
-    image:
-      tag: v1.0.1
     version: none
     replicaCount: 4
     fullnameOverride: "products"
     rollouts:
       enabled: true
-      canary:
-        steps:
-          - setWeight: 25
-          - pause:
-              duration: 30s
-          - setWeight: 50
-          - pause:
-              duration: 30s
   fullnameOverride: "products"
   
 global:

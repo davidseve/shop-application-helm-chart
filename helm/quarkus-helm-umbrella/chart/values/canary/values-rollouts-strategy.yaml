@@ -1,0 +1,19 @@
+products:
+  quarkus-base:
+    rollouts:
+      canary:
+        steps:
+          - setWeight: 25
+          - pause:
+              duration: 30s
+          - setWeight: 50
+          - pause:
+              duration: 30s
+
+
+
+
+
+
+
+
